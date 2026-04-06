@@ -30,7 +30,7 @@ export function WinLossChart({ wins, losses }: WinLossChartProps) {
         </Pie>
         <Tooltip
           contentStyle={{ backgroundColor: '#1a1a24', border: '1px solid #2a2a40', borderRadius: '8px' }}
-          formatter={(val: number, name: string) => [val, name]}
+          formatter={(val: unknown, name: unknown) => [val as number, name as string]}
         />
         <Legend
           formatter={(value) => <span style={{ color: '#94a3b8', fontSize: 12 }}>{value}</span>}

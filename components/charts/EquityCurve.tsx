@@ -40,7 +40,7 @@ export function EquityCurve({ data }: EquityCurveProps) {
         <Tooltip
           contentStyle={{ backgroundColor: '#1a1a24', border: '1px solid #2a2a40', borderRadius: '8px' }}
           labelStyle={{ color: '#94a3b8' }}
-          formatter={(val: number) => [formatCurrency(val), 'Equity']}
+          formatter={(val: unknown) => [formatCurrency(val as number), 'Equity']}
         />
         <Area
           type="monotone"

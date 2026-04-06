@@ -74,8 +74,9 @@ export function PlaybookForm({ playbook, onSubmit, loading }: PlaybookFormProps)
   const [riskRules, setRiskRules] = useState<string[]>(playbook?.risk_rules || [])
   const [selectedColor, setSelectedColor] = useState(playbook?.color || '#6366f1')
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema) as any,
     defaultValues: {
       name: playbook?.name || '',
       description: playbook?.description || '',

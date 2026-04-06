@@ -32,7 +32,7 @@ export function PnLByDay({ data }: PnLByDayProps) {
         <Tooltip
           contentStyle={{ backgroundColor: '#1a1a24', border: '1px solid #2a2a40', borderRadius: '8px' }}
           labelStyle={{ color: '#94a3b8' }}
-          formatter={(val: number) => [formatCurrency(val), 'P&L']}
+          formatter={(val: unknown) => [formatCurrency(val as number), 'P&L']}
         />
         <Bar dataKey="pnl" radius={[3, 3, 0, 0]}>
           {data.map((entry, index) => (

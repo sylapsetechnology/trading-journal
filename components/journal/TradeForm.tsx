@@ -50,8 +50,9 @@ export function TradeForm({ trade, playbooks = [], accounts = [], onSubmit, load
   const [selectedSetup, setSelectedSetup] = useState(trade?.setup || '')
   const [liveCalc, setLiveCalc] = useState<{ gross: number; net: number; r: number } | null>(null)
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema) as any,
     defaultValues: {
       symbol: trade?.symbol || '',
       asset_type: trade?.asset_type || 'stocks',
